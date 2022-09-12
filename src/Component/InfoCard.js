@@ -26,9 +26,7 @@ function InfoCard(props) {
         }
     }
     const registerForSessionCallback = async (response) => {
-        // console.log("element._id",response)
         response = await response.json()
-        //console.log("rJWTesponse",response)
         registerForSession(id, response.data.email, response.data.userName, registeredCallback)
 
     }
@@ -42,10 +40,7 @@ function InfoCard(props) {
         else{
             window.alert("Please login to take part in any study session.")
         }
-        // const x = JSON.parse(localStorage.getItem('accessToken'))
-        // console.log("Toekn",x)
-        //registerForSession(id, email, userName,registerForSessionCallback)
-    }
+        }
 
     return (
         <div >

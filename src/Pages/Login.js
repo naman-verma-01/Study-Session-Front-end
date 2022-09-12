@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { SET_AUTH_STATUS } from '../Reducers/types';
 import { useDispatch } from 'react-redux'
 import {login} from "../API/Auth"
-//import backgroundImg from "../back-to-school-black-white-doodle-hand-draw-seamless-vector-pattern-good-textile-fabric-design-wrapping-paper-website-122159565.png"
 
 function Login() {
     const [userInfo, setUserInfo] = useState({ email: "", password: "" })
@@ -52,7 +51,7 @@ function Login() {
                     <button onClick={submitHandler} style={{ width: "100%" }} class="btn btn-dark" >Login</button>
                     <hr />
                     <h6>Don't have an account? <a href='/signup'>Sign Up</a></h6>
-        
+
                 </form>
             </div>
             

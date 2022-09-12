@@ -10,7 +10,6 @@ function PostSession() {
     const [userSession, setUserSession] = useState()
     const [loading, setLoading] = useState(true)
     const [hideData, setHideData] = useState(false)
-    //const [userInfo, setUserInfo] = useState()
     const createSessionCallback = async (response) => {
         response = await response.json()
         console.log("response", response)
@@ -36,7 +35,6 @@ function PostSession() {
     }
 
     const handleData = async (response) => {
-        // event.preventDefault()
         response = await response.json()
         console.log("RESPINSE", response)
         setUserSession(response.data)

@@ -1,5 +1,6 @@
 import { serverApiUrl } from "../index"
 
+// using create Session api
 export const createSession = (sessionInfo,callback) => {
 
     let headers = new Headers();
@@ -20,6 +21,7 @@ export const createSession = (sessionInfo,callback) => {
         .catch((error) => { console.log(error) })
 }
 
+// using get session api
 export const getSession = (callback) => {
 
     let headers = new Headers();
@@ -39,7 +41,7 @@ export const getSession = (callback) => {
         .catch((error) => { console.log(error) })
 }
 
-
+// using get Sessions sorted by start date api 
 export const getSortedSession = (order, callback) => {
 
     let headers = new Headers();
@@ -59,7 +61,7 @@ export const getSortedSession = (order, callback) => {
         .catch((error) => { console.log(error) })
 }
 
-
+// using register to session api
 export const registerForSession = (id, email, userName, callback) => {
 
     let headers = new Headers();
@@ -80,7 +82,7 @@ export const registerForSession = (id, email, userName, callback) => {
         .catch((error) => { console.log(error) })
 }
 
-
+// using api to get sessions posted by a perticular user
 export const getSessionsOfUser = (email, callback) => {
 
     let headers = new Headers();

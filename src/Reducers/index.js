@@ -6,6 +6,7 @@ const initial_user_state = {
     authStatus: false,
 }
 
+// maintaining authentication status of user using Redux 
 const user_reducer = (state = initial_user_state, action) => {
     switch (action.type) {
         case actionTypes.SET_AUTH_STATUS:

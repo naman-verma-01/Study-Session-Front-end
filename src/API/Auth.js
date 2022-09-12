@@ -1,5 +1,6 @@
 import { serverApiUrl } from "../index"
 
+// using post api to sign up new user
 export const signup = (email, password, userName, callback) => {
 
     let headers = new Headers();
@@ -21,6 +22,7 @@ export const signup = (email, password, userName, callback) => {
         .catch((error) => { console.log(error) })
 }
 
+// using get api to login user
 export const login = (email, password, callback) => {
 
     let headers = new Headers();
@@ -42,6 +44,7 @@ export const login = (email, password, callback) => {
         .catch((error) => { console.log(error) })
 }
 
+// using decryptJWT POST type api to decrypt accessToken
 export const decryptJWT = (token, callback) => {
 
     let headers = new Headers();

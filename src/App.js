@@ -6,8 +6,11 @@ import SignUp from "./Pages/SignUp"
 import Navbar from "./Component/Navbar"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 function App() {
+  
   const authStatus = useSelector((state) => state.user.authStatus);
+  
   return (
     <>
       <BrowserRouter>
@@ -30,8 +33,8 @@ function App() {
   );
 }
 
+// Protected Routes can only be accessed if the user's authentication status is TRUE, else redirected to login page
 const ProtectedRoute = ({ authStatus, children }) => {
-  console.log("AUTH_STATUS =>", authStatus);
 
   if (!authStatus) {
     window.alert("You need to login to access this feature.")

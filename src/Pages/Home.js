@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { getSession, getSortedSession, registerForSession } from "../API/StudySession"
-import { decryptJWT } from "../API/Auth"
-import { useNavigate } from 'react-router-dom'
 import InfoCard from '../Component/InfoCard'
 function Home() {
     const [studySessionData, setStudySessionData] = useState([])
     const [order, setOrder] = useState(1)
     const [showFilter, setShowFilter] = useState(false)
-    const [id, setId] = useState()
     const [loading, setLoading] = useState(true)
-    const nav = useNavigate();
-
+   
     const getSessionCallback = async (response) => {
         response = await response.json()
         console.log("RESPONSE DATA", response.data)
         setStudySessionData(response.data)
-        //console.log("studySessionData",studySessionData)
         setLoading(false)
     }
 
@@ -28,26 +23,6 @@ function Home() {
 
     const getSortedSessionHandle = () => {
         getSortedSession(order, getSortedSessionCallback)
-    }
-    const registeredCallback = async (response) => {
-        console.log("RESPONSE DATA", await response.json())
-    }
-    const registerForSessionCallback = async (response) => {
-        // console.log("element._id",response)
-        response = await response.json()
-        //console.log("rJWTesponse",response)
-        registerForSession(id, response.data.email, response.data.userName, registeredCallback)
-
-    }
-
-    const registerForSessionHandle = async (_id) => {
-
-        console.log(_id)
-        setId(_id)
-        // const x = JSON.parse(localStorage.getItem('accessToken'))
-        // console.log("Toekn",x)
-        decryptJWT(await JSON.parse(localStorage.getItem('accessToken')), registerForSessionCallback)
-        //registerForSession(id, email, userName,registerForSessionCallback)
     }
     useEffect(() => {
         document.body.style.backgroundImage = "none"
