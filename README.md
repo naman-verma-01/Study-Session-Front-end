@@ -1,5 +1,5 @@
 # Deployed Link
-## [Here]("https://study-planner-01.herokuapp.com/")
+-[Here]("https://study-planner-01.herokuapp.com/")
 # Getting Started with Create React App
 
 
