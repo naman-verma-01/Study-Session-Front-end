@@ -9,7 +9,7 @@ import RootReducer from './Reducers'
 
 let store = createStore(RootReducer) 
 
-export const serverApiUrl = "http://localhost:1800/" 
+export const serverApiUrl = "https://study-session-backend.herokuapp.com/"//"http://localhost:1800/" 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
